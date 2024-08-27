@@ -1,3 +1,6 @@
+-- RESOURCE CHEAT SHEET FOR PostgreSQL
+-- https://learnsql.com/blog/postgresql-cheat-sheet/
+
 -- Step 1
 -- create table command
 CREATE TABLE students (
