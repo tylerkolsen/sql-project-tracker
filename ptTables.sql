@@ -161,3 +161,24 @@ FROM students AS s
         ON (g.project_title = p.title)
 WHERE github = 'jhacks';
     
+-- Further Study
+-- Create a view. We can manipulate a view as if it was a defined table
+CREATE VIEW report_card_view AS
+SELECT s.first_name,
+    s.last_name,
+    g.project_title,
+    g.grade,
+    p.max_grade
+FROM students AS s
+    JOIN grades AS g
+        ON (s.github = g.student_github)
+    JOIN projects AS p
+        ON (g.project_title = p.title);
+
+-- With this defined, we can then query it like another table
+SELECT *
+FROM report_card_view;
+
+SELECT *
+FROM report_card_view
+ORDER BY first_name, project_title;
